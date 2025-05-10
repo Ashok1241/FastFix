@@ -83,7 +83,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     hourlyRate: number
   ) => {
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/register/worker', {
+      const res = await axios.post('https://fastfix-0sal.onrender.com/api/auth/register/worker', {
         email, password, name, phone, skills, experience, responseTime, hourlyRate
       });
       persistSession(res.data.user, res.data.token);
@@ -100,7 +100,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     phone: string
   ) => {
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/register', {
+      const res = await axios.post('https://fastfix-0sal.onrender.com/api/auth/register', {
         email, password, name, phone
       });
       persistSession(res.data.user, res.data.token);
@@ -112,7 +112,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const login = async (email: string, password: string) => {
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/login', { email, password });
+      const res = await axios.post('https://fastfix-0sal.onrender.com/api/auth/login', { email, password });
       persistSession(res.data.user, res.data.token);
     } catch (error) {
       console.error('Login failed', error);
@@ -129,7 +129,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     try {
       if (!user?.id) throw new Error('No user ID available.');
 
-      const res = await axios.put('http://localhost:3000/api/auth/update', {
+      const res = await axios.put('https://fastfix-0sal.onrender.com/api/auth/update', {
         id: user.id,
         ...data,
       });
@@ -153,7 +153,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       if (!storedUser) return null;
 
       const parsedUser = JSON.parse(storedUser);
-      const res = await axios.get(`http://localhost:3000/api/users/profile/${parsedUser.id}`);
+      const res = await axios.get(`https://fastfix-0sal.onrender.com/api/users/profile/${parsedUser.id}`);
 
       const updatedUser = {
         ...res.data,
@@ -168,7 +168,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       return null;
     }
   };
-
   return (
     <AuthContext.Provider value={{ user, registerWorker, registerCustomer, login, logout, updateUser, getUserProfile }}>
       {children}
