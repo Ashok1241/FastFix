@@ -9,10 +9,10 @@ const Home = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div className="relative bg-blue-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+      <div className="relative bg-blue-600 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 md:pt-20 md:pb-56 relative z-10">
           <div className="text-center md:text-left">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-6">
               Find Skilled Professionals <br className="hidden md:block" /> For Your Home & Office
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl md:mx-0 mx-auto">
@@ -20,9 +20,10 @@ const Home = () => {
               cleaning and more - all in one place.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Link to="/workers" className="px-6 py-3 rounded-md bg-white text-blue-600 font-medium hover:bg-gray-100 transition-colors">
-                Find Workers
-              </Link>
+              <Link to={user ? "/workers" : "/login"}
+                 className="px-6 py-3 rounded-md bg-white text-blue-600 font-medium hover:bg-gray-100 transition-colors">
+                  Find Workers
+                  </Link>
               {!user && (
                 <Link to="/worker-registration" className="px-6 py-3 rounded-md bg-blue-800 text-white font-medium hover:bg-blue-900 transition-colors">
                   Register as Worker
