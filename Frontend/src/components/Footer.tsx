@@ -31,7 +31,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center text-gray-300 text-sm">
                 <Mail className="h-4 w-4 mr-2" />
-                <span>support@fastfix.com</span>
+                <span>supportfastfix@gmail.com</span>
               </li>
               <li className="flex items-center text-gray-300 text-sm">
                 <MapPin className="h-4 w-4 mr-2" />
