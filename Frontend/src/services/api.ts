@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Worker } from '../types';
 
-const BASE_URL = 'http://localhost:3000/api/workers';
+const BASE_URL = 'https://fastfix-0sal.onrender.com/api/workers';
 
 export const api = {
   getWorkers: async (): Promise<Worker[]> => {
