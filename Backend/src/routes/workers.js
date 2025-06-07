@@ -5,7 +5,7 @@ import { auth } from '../middleware/auth.js';
 import twilio from 'twilio';
 dotenv.config();
 const router = express.Router();
-const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+// const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 // Get all workers
 router.get('/', async (req, res) => {
