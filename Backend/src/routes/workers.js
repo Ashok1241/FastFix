@@ -5,7 +5,7 @@ import { auth } from '../middleware/auth.js';
 import twilio from 'twilio';
 dotenv.config();
 const router = express.Router();
-// const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 // Get all workers
 router.get('/', async (req, res) => {
@@ -55,6 +55,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Call worker
+/*
 router.post('/:id/call', async (req, res) => {
   try {
     const { customerPhone } = req.body;
@@ -78,6 +79,7 @@ router.post('/:id/call', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
 router.post('/:id/message', async (req, res) => {
   try {
     const { customerPhone } = req.body;
@@ -101,5 +103,6 @@ router.post('/:id/message', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+*/
 
 export default router;
