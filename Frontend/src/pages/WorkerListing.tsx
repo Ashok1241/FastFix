@@ -14,6 +14,10 @@ const WorkerListing = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [callState, setCallState] = useState<{ [key: string]: { loading: boolean; message: string } }>({});
   const { user } = useAuth();
+    const nav = useNavigate();
+  if(!user){
+    nav("/login");
+  }
 
   useEffect(() => {
     const fetchWorkers = async () => {
